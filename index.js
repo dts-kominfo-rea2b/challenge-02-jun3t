@@ -23,19 +23,38 @@ function lakukanLooping(arrPegawai) {
 
       Contoh: ["Aisyah Nirmala", "Mansur Faisal", ...]
   */
+  const arrFullName = [];
   let hasilLooping = null;
+  for (let i = 0; i < arrayObjectPegawai.length; i++) {
+    arrFullName.push(arrayObjectPegawai[i].namaDepan + ' ' + arrayObjectPegawai[i].namaBelakang);
+  }
+  hasilLooping = arrFullName;
 
   /*
     TODO 2: Buatlah sebuah variabel bernama "jumlahPria"
       yang berisi jumlah pria dari masing masing pegawai
   */
+  let jmlPria = 0;
   let jumlahPria = null;
+  for (let i = 0; i < arrayObjectPegawai.length; i++) {
+    if(arrayObjectPegawai[i].jenisKelamin === 'M') {
+      jmlPria = jmlPria + 1;
+    }
+  }
+  jumlahPria = jmlPria;
 
   /*
     TODO 3: Buatlah sebuah variabel bernama "jumlahWanita"
       yang berisi jumlah wanita dari masing masing pegawai
   */
+  let jmlWanita = 0;
   let jumlahWanita = null;
+  for (let i = 0; i < arrayObjectPegawai.length; i++) {
+    if(arrayObjectPegawai[i].jenisKelamin === 'F') {
+      jmlWanita = jmlWanita + 1;
+    }
+  }
+  jumlahWanita = jmlWanita;
 
   /*
     TODO 4: Buatlah sebuah variabel bernama "komentar"
@@ -48,7 +67,16 @@ function lakukanLooping(arrPegawai) {
       Apabila imbang, maka komentar akan berisi:
         "Jumlah Pria dan Wanita berimbang"
   */
+  let comment = "";
   let komentar = null;
+  if(jumlahPria > jumlahWanita) {
+    comment = "Jumlah Pria lebih banyak dari Wanita";
+  } else if (jumlahWanita > jumlahPria) {
+    comment = "Jumlah Wanita lebih banyak dari Pria";
+  } else {
+    comment = "Jumlah Pria dan Wanita berimbang";
+  }
+  komentar = comment;
 
   // ! JANGAN DIMODIFIKASI
   return {
